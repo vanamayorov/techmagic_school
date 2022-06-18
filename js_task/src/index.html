@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task</title>
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container py-3">
+        <h2>Basic Queue</h2>
+        <form class="mb-4" novalidate>
+            <div class="row">
+                <div class="col-6">
+                    <input class="form-control" name="item" type="text" placeholder="Item name" aria-label="Item name">
+                    <div class="invalid-feedback"></div>
+                </div>
+                <div class="col-4">
+                    <button type="submit" class="btn btn-add btn-success">Add item</button>
+                    <button type="button" class="btn btn-delete btn-danger">Delete item</button>
+                </div>
+            </div>
+        </form>
+
+        <ul class="list-group p-3 bg-info bg-opacity-10 border border-info rounded-en"></ul>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

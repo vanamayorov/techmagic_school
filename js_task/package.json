@@ -1,0 +1,16 @@
+{
+  "name": "js_task",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel src/index.html --open --no-source-maps  --port 3000",
+    "build": "parcel build src/index.html --no-source-maps --public-url ./ --dist-dir=build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.6.1"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
