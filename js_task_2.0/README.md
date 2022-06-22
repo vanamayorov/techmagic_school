@@ -1,3 +1,4 @@
+<p>Url: <a href="https://vanamayorov.github.io/techmagic_school/">https://vanamayorov.github.io/techmagic_school/</a></p>  
 <h2>Getting started</h2>
 <ol>
     <li>
