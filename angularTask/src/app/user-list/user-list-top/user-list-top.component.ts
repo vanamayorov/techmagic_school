@@ -8,9 +8,6 @@ import { UsersService } from 'src/app/users.service';
   styleUrls: ['./user-list-top.component.scss']
 })
 export class UserListTopComponent {
-  @Input() sortUsers!: (event: MatSelectChange) => void;
-  @Input() searchUsers!: (event: Event) => void;
-  @Input() selectAllUsers!: () => void;
   constructor(public usersService: UsersService) { }
 
 
