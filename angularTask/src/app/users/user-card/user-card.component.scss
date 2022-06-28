@@ -1,0 +1,26 @@
+.user-card {
+    position: relative;
+    font-size: 1rem;
+}
+
+mat-checkbox {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+}
+
+.user-card div:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.user-card__img-wrapper {
+    height: 350px;
+    width: 100%;
+}
+
+.user-card__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

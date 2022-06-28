@@ -1,0 +1,22 @@
+<article class="user-card">
+    <mat-checkbox
+        [(ngModel)]="user.checked"
+        (change)="check.emit(user.id)"
+    ></mat-checkbox>
+    <div class="user-card__img-wrapper">
+        <img class="user-card__img"
+            src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" alt="">
+    </div>
+
+    <div>
+        {{user.firstname}} {{user.lastname}}
+    </div>
+
+    <div>
+        <a href="mailto:{{user.email}}">{{user.email}}</a>
+    </div>
+
+    <div>
+        <a href="tel:{{user.phone}}">{{user.phone}}</a>
+    </div>
+</article>

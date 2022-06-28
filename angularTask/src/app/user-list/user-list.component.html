@@ -1,0 +1,13 @@
+<div class="user-list__wrapper">
+    <app-user-list-top></app-user-list-top>
+
+    <ul class="user-list__list" *ngIf="usersService.usersList.length; else noUsers">
+        <li class="user-list__item" *ngFor="let user of usersService.usersList">
+            <app-user-card [user]="user" (check)="toggleCheck($event)"></app-user-card>
+        </li>
+    </ul>
+
+    <ng-template #noUsers>
+        <p class="mat-body">No users...</p>
+    </ng-template>
+</div>

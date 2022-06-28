@@ -1,0 +1,23 @@
+<div class="user-list__top">
+    <div class="user-list__top-actions">
+        <button mat-flat-button color="primary" (click)="usersService.selectAllUsers()">Select all</button>
+        <button mat-flat-button color="warn" (click)="usersService.deleteUsers()" [disabled]="!usersService.checkedUsers.length">Delete</button>
+
+        <mat-form-field>
+            <mat-label>Sorting order</mat-label>
+            <mat-select (selectionChange)="usersService.sortUsers($event)">
+                <mat-option value="asc">
+                    ASC
+                </mat-option>
+                <mat-option value="desc">
+                    DESC
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field>
+        <mat-label>Search Users</mat-label>
+        <input matInput (input)="usersService.searchUsers($event)">
+    </mat-form-field>
+</div>

@@ -1,0 +1,13 @@
+.user-list__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-right: 0.7rem;
+}
+
+.user-list__top-actions mat-form-field {
+  margin-left: 2.5rem;
+}

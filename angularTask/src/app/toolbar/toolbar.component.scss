@@ -1,0 +1,9 @@
+.mat-toolbar-row, .mat-toolbar-single-row {
+    padding: 0;
+}
+
+mat-toolbar mat-toolbar-row {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px ;
+}
