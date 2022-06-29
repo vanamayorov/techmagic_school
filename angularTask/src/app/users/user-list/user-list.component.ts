@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsersService } from '../users.service';
+import { UsersService } from 'src/app/shared/services/users.service';
 
 @Component({
   selector: 'app-user-list',
@@ -7,6 +7,7 @@ import { UsersService } from '../users.service';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent {
+
   constructor(public usersService: UsersService) { }
 
   toggleCheck(id: number) {
@@ -17,4 +18,5 @@ export class UserListComponent {
 
     this.usersService.checkedUsers.push(id);
   }
+
 }

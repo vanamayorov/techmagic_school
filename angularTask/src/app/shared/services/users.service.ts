@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { IUser, users } from './users';
+import { IUser, users } from '../../users';
 
 @Injectable({
   providedIn: 'root'

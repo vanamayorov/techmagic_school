@@ -1,7 +1,8 @@
 <div class="user-list__top">
     <div class="user-list__top-actions">
         <button mat-flat-button color="primary" (click)="usersService.selectAllUsers()">Select all</button>
-        <button mat-flat-button color="warn" (click)="usersService.deleteUsers()" [disabled]="!usersService.checkedUsers.length">Delete</button>
+        <button mat-flat-button color="warn" (click)="usersService.deleteUsers()"
+            [disabled]="!usersService.checkedUsers.length">Delete</button>
 
         <mat-form-field>
             <mat-label>Sorting order</mat-label>
