@@ -1,0 +1,64 @@
+<mat-card>
+    <mat-card-title>
+        <span *ngIf="currentUser.id; else elseBlock">
+            {{currentUser.name}}
+        </span>
+
+        <ng-template #elseBlock>
+            Create New User
+        </ng-template>
+    </mat-card-title>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="myForm.valid && submitForm()">
+        <mat-card-content>
+            <mat-form-field class="full-width" appearance="legacy">
+                <input matInput placeholder="First name" type="text" name="firstName" formControlName="firstName"
+                    required />
+                <mat-error *ngIf="myForm.get('firstName')?.hasError('required')">
+                    First name is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="myForm.get('firstName')?.hasError('minlength')">
+                    First name must be longer than <strong>2 characters</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="legacy">
+                <input matInput formControlName="lastName" placeholder="Last name" type="text" name="lastName"
+                    required />
+                <mat-error *ngIf="myForm.get('lastName')?.hasError('required')">
+                    Last name is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="myForm.get('lastName')?.hasError('minlength')">
+                    Last name must be longer than <strong>2 characters</strong>
+                </mat-error>
+
+                <mat-error *ngIf="myForm.get('lastName')?.hasError('maxlength')">
+                    Last name must be less than <strong>60 characters</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="legacy">
+                <input matInput formControlName="email" placeholder="Email" type="email" name="email" required />
+                <mat-error *ngIf="myForm.hasError('email') && !myForm.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="myForm.get('email')?.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="legacy">
+                <input matInput formControlName="phone" placeholder="Phone" type="tel" name="phone" required />
+                <mat-error *ngIf="myForm.get('phone')?.hasError('required')">
+                    Phone is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="myForm.get('phone')?.hasError('pattern')">
+                    Phone must contain only <strong>numeric values</strong>
+                </mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button type="submit" mat-raised-button color="primary">
+                <span *ngIf="currentUser.id; else elseBtn">Save</span>
+                <ng-template #elseBtn>Create</ng-template>
+            </button>
+            <button type="button" mat-raised-button color="warn" (click)="cancelForm()">Cancel</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

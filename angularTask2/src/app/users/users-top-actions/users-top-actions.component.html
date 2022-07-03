@@ -1,0 +1,14 @@
+<mat-toolbar>
+    <div class="actions-row">
+        <button 
+        mat-stroked-button 
+        color="primary" 
+        (click)="fetchAll()"
+        >Fetch users</button>
+        <button 
+        mat-stroked-button 
+        color="warn" 
+        [disabled]="!checkedUsers.length"
+        (click)="deleteAll()">Delete</button>
+    </div>
+</mat-toolbar>

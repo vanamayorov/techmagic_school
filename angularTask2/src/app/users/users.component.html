@@ -1,0 +1,23 @@
+<app-users-top-actions (fetchUsers)="fetchUsers()" (deleteUsers)="deleteUsers()" [checkedUsers]="checkedUsers">
+</app-users-top-actions>
+
+<div class="users-container">
+    <div class="users-list">
+        <mat-spinner *ngIf="loaderService.isLoading | async; else usersList"></mat-spinner>
+        <ng-template #usersList>
+            <app-users-list *ngIf="users.length; else elseBlock" [users]="users" (selectUser)="selectUser($event)"
+                (toggleUserInCheckedList)="addToCheckedList($event)"></app-users-list>
+            <ng-template #elseBlock>
+                <div class="mat-h2">
+                    Users list is empty...
+                </div>
+            </ng-template>
+        </ng-template>
+
+    </div>
+
+    <div class="users-form">
+        <app-users-form [selectedUser]="selectedUser" (cancelUser)="resetUser()" (editUser)="saveUser($event)">
+        </app-users-form>
+    </div>
+</div>

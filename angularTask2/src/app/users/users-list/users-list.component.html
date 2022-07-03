@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Users List</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let user of users" (click)="selectUser.emit(user)">
+                <h3 matLine>{{user.name}}</h3>
+                <mat-checkbox 
+                    (click)="toggleUserInCheckedList.emit(user);$event.stopImmediatePropagation()"
+                ></mat-checkbox>
+                <p matLine>
+                    {{user.email}} <br> {{user.phone}}
+                </p>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
