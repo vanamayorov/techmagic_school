@@ -17,10 +17,10 @@ import { InterceptorService } from './shared/services/interceptor.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UsersModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    UsersModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }

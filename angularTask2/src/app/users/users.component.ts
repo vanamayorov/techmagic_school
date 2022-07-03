@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICurrentUser, IUser } from '../shared/interfaces/user.interface';
 import { LoaderService } from '../shared/services/loader.service';
+import { NotifyBarService } from '../shared/services/notify-bar.service';
 import { UsersService } from '../shared/services/users.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private usersService: UsersService,
-    public loaderService: LoaderService
+    public loaderService: LoaderService,
+    public notifyService: NotifyBarService
   ) { }
 
   ngOnInit(): void {
@@ -52,8 +54,10 @@ export class UsersComponent implements OnInit {
 
     if (!currentUser.id) {
       this.createUser(user);
+      this.notifyService.notify(`New user: ${user.name} has been created`);
     } else {
       this.updateUser(user);
+      this.notifyService.notify(`User: ${currentUser.name} has been updated`);
     }
 
     this.resetUser();

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ICurrentUser, IUser } from 'src/app/shared/interfaces/user.interface';
-import { NotifyBarService } from 'src/app/shared/services/notify-bar.service';
 
 @Component({
   selector: 'app-users-form',
@@ -30,7 +29,7 @@ export class UsersFormComponent implements OnInit {
   originalTitle: string = "";
   myForm: FormGroup;
 
-  constructor(private notifyService: NotifyBarService) {
+  constructor() {
     this.myForm = new FormGroup({
       "firstName": new FormControl("", [
         Validators.required,
@@ -70,7 +69,6 @@ export class UsersFormComponent implements OnInit {
 
   saveUser(user: IUser) {
     this.editUser.emit(user);
-    this.notifyService.notify("New user has been added");
   }
 
   cancelForm() {
