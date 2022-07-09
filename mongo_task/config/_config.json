@@ -1,0 +1,21 @@
+{
+  "test": {
+    "database": "mongodb+srv://@cluster0.mw6uy.mongodb.net/",
+    "dbName": "default",
+    "dbConfig": {
+      "useUnifiedTopology": true,
+      "useNewUrlParser": true
+    },
+    "seed": false,
+    "debug": true
+  },
+  "local": {
+    "database": "mongodb+srv://user:user@cluster0.mw6uy.mongodb.net/?retryWrites=true&w=majority",
+    "dbName": "myFirstDatabase",
+    "seed": true,
+    "dbConfig": {
+      "useUnifiedTopology": true,
+      "useNewUrlParser": true
+    }
+  }
+}
